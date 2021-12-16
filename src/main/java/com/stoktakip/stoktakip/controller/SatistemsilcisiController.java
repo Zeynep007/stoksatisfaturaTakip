@@ -13,6 +13,7 @@ import com.stoktakip.stoktakip.model.Satistemsilcisi;
 import com.stoktakip.stoktakip.services.SatistemsilcisiService;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -23,7 +24,7 @@ public class SatistemsilcisiController{
     SatistemsilcisiService satistemsilcisiService;
 
     @RequestMapping(value="/satistemsilcisi_login", method = RequestMethod.POST )
-    public ModelAndView login(@ModelAttribute("satistemsilcisi") Satistemsilcisi satistemsilcisi , HttpServletResponse response){
+    public ModelAndView login(@ModelAttribute("satistemsilcisi") Satistemsilcisi satistemsilcisi , HttpServletResponse response, HttpServletRequest request){
         ModelAndView model = new ModelAndView();
         List<Satistemsilcisi> satistemsilcileri = satistemsilcisiService.getAllSatistemsilcisi();
         for(Satistemsilcisi satistemsilcisi1 : satistemsilcileri){
@@ -32,6 +33,7 @@ public class SatistemsilcisiController{
                 Cookie cookie = new Cookie("satistemsilcisi", satistemsilcisi.getKullaniciadi());
                 cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
                 response.addCookie(cookie);
+                request.getSession().setAttribute("kullanıcı_adi", satistemsilcisi.getKullaniciadi());
                 model.setViewName("satistemsilcisi_anasayfa");
                 return model;
             }

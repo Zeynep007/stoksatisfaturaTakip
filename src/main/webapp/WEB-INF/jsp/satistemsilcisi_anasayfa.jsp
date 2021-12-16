@@ -180,8 +180,8 @@
     </div>
 </nav>
 
-<center><h1 style= "background-color: darksalmon;">HOŞGELDİNİZ</h1> </center>
-<div class="tenor-gif-embed" data-postid="19751076" data-share-method="host" data-width="30%" data-aspect-ratio="1.0897155361050328"><a href="https://tenor.com/view/raf-rafs-rafsdesign-rafs84-sign-gif-19751076">Raf Rafs GIF</a> from <a href="https://tenor.com/search/raf-gifs">Raf GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<center><h1 style= "background-color: darksalmon;">HOŞGELDİNİZ <%= session.getAttribute("kullanıcı_adi")%></h1> </center>
+
 
 
 </body>

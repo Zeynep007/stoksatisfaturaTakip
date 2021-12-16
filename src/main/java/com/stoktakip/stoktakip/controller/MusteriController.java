@@ -4,16 +4,15 @@ package com.stoktakip.stoktakip.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.stoktakip.stoktakip.model.Musteri;
 import com.stoktakip.stoktakip.services.MusteriService;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -24,7 +23,7 @@ public class MusteriController {
     MusteriService musteriService;
 
     @RequestMapping(value = "/musteri", method = RequestMethod.POST)
-    public ModelAndView login(@ModelAttribute("musteri") Musteri musteri, HttpServletResponse response) {
+    public ModelAndView login(@ModelAttribute("musteri") Musteri musteri, HttpServletResponse response, HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
         List<Musteri> personeller = musteriService.getAllMusteri();
         for (Musteri musteri1 : personeller) {
@@ -35,8 +34,6 @@ public class MusteriController {
                Cookie cookie = new Cookie("musteri", musteri.getKullaniciadi());
                 cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
                 response.addCookie(cookie);
-
-
                 model.setViewName("musteri_anasayfa");
                 return model;
             }
