@@ -3,13 +3,13 @@ package com.stoktakip.stoktakip.controller;
 
 import java.util.List;
 
+import com.stoktakip.stoktakip.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.stoktakip.stoktakip.model.Musteri;
-import com.stoktakip.stoktakip.services.MusteriService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +21,11 @@ public class MusteriController {
 
     @Autowired
     MusteriService musteriService;
+    UrunService urunService;
+    KargofirmasiService kargofirmasiService;
+    SatistemsilcisiService satistemsilcisiService;
+    IllerService illerService;
+    KategoriService kategoriService;
 
     @RequestMapping(value = "/musteri", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute("musteri") Musteri musteri, HttpServletResponse response, HttpServletRequest request) {
@@ -72,6 +77,8 @@ public class MusteriController {
 
         return model;
     }
+    @GetMapping({"/satistemsilcisi/satistemsilcisi_login"})
+    public String home5() {return"satistemsilcisi_anasayfa";}
 
 
     @RequestMapping(value = "/editMusteri/{id}", method = RequestMethod.GET)

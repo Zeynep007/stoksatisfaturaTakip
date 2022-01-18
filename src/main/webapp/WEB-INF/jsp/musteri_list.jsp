@@ -24,13 +24,11 @@
             <a class="navbar-brand" href="#" style="background-color: black">STOK-SATIŞ-FATURA SİSTEMİ</a>
         </div>
         <ul class="nav navbar-nav" style="background-color: black">
-            <li><a href="/fatura/list">Fatura Ekranı</a></li>
             <li><a href="/iller/list">İller Ekranı</a></li>
             <li><a href="/urun/list">Ürün Ekranı</a></li>
             <li><a href="/kategori/list">Kategori Ekranı</a></li>
             <li><a href="/kargofirmasi/list">Kargo Firması Ekranı</a></li>
             <li><a href="/satistemsilcisi/list">Satış Temsilcisi Ekranı</a></li>
-            <li><a href="/siparis/list">Sipariş Ekranı</a></li>
             <li  class="active"><a href="/musteri/list">Müşteri Ekranı </a></li>
         </ul>
     </div>

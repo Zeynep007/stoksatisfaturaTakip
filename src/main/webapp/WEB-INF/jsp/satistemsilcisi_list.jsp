@@ -27,8 +27,6 @@
             <li><a href="/urun/list">Ürün Ekranı</a></li>
             <li><a href="/kategori/list">Kategori Ekranı</a></li>
             <li><a href="/kargofirmasi/list">Kargo Firması Ekranı</a></li>
-            <li><a href="/fatura/list">Fatura Ekranı</a></li>
-            <li><a href="/siparis/list">Sipariş Ekranı</a></li>
             <li  class="active"><a href="/satistemsilcisi/list">Satış Temsilcisi Ekranı </a></li>
         </ul>
     </div>

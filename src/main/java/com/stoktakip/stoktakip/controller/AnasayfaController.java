@@ -23,6 +23,13 @@ public class AnasayfaController {
 
     }
 
+    @GetMapping({"/musteri/musteri"})
+    public String home4(){
+        return"musteri_anasayfa";
+    }
+
+
+
 
 
 
