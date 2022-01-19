@@ -177,7 +177,5 @@
 
             <center><h1 style= "background-color: darksalmon;">HOŞGELDİNİZ!</h1> </center>
 
-
-
 </body>
 </html>

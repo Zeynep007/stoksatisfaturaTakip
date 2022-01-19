@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<body background="https://www.siteyapicieticaret.com/wp-content/uploads/2018/03/eticaret-fiziksel-magaza-karsilastirma.jpg">
+<body background="https://www.webtekno.com/images/editor/default/0002/92/3c38d88834e0edcb4fb54d961566b8403fb1881d.jpeg">
 
 <nav class="navbar navbar-inverse" style="background-color: black">
     <div class="container-fluid">

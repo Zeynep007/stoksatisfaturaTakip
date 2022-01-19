@@ -3,6 +3,9 @@ package com.stoktakip.stoktakip.controller;
 
 import java.util.List;
 
+import com.stoktakip.stoktakip.model.Kargofirmasi;
+import com.stoktakip.stoktakip.model.Siparis;
+import com.stoktakip.stoktakip.model.Urun;
 import com.stoktakip.stoktakip.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.server.Session;
@@ -30,16 +33,17 @@ public class MusteriController {
     @RequestMapping(value = "/musteri", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute("musteri") Musteri musteri, HttpServletResponse response, HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
+
         List<Musteri> personeller = musteriService.getAllMusteri();
         for (Musteri musteri1 : personeller) {
             if (musteri1.getKullaniciadi().equals(musteri.getKullaniciadi()) && musteri1.getSifre().equals(musteri.getSifre())) {
                 model.addObject("musteri", musteri1);
-
-
-               Cookie cookie = new Cookie("musteri", musteri.getKullaniciadi());
+                Cookie cookie = new Cookie("musteri", musteri.getKullaniciadi());
                 cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
                 response.addCookie(cookie);
+
                 model.setViewName("musteri_anasayfa");
+
                 return model;
             }
         }
@@ -110,4 +114,7 @@ public class MusteriController {
     }
 
 
-}
+
+
+    }
+
